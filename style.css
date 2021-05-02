@@ -58,6 +58,13 @@ p {
     background: white;
 }
 
+.footer {
+    padding: 1.6667rem;
+    text-align: center;
+    background: #ddd;
+    margin-top: 1.6667rem;
+  }
+
 .topnav {
     background: #333;
     overflow: hidden;
@@ -82,7 +89,7 @@ a:hover {
 .img {
     background-color: #aaa;
     width: 100%;
-    padding: 20px;
+    padding: 1.6667rem;
     font-size: 1.3333rem;
     font-family: "Inconsolata";
 
@@ -90,10 +97,11 @@ a:hover {
 
 .card {
     background-color: white;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 1.6667rem;
+    margin-top: 1.6667rem;
 }
-      
+
+   
 * {
     box-sizing: border-box;
 }
@@ -150,7 +158,7 @@ a:hover {
     float: left;
 }
 
-@media all and (max-width: 720px) {
+@media all and (max-width: 60rem) {
 
     html {
         font-size: 16px;
