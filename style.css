@@ -88,11 +88,9 @@ a:hover {
 .img {
     background-color: #aaa;
     width: 100%;
-    padding: 1.6667rem;
-    font-size: 1.3333rem;
-    font-family: "Inconsolata";
-
+    padding: 0.5rem;
 }
+
 
 .card {
     background-color: white;
@@ -100,12 +98,12 @@ a:hover {
     margin-top: 1.6667rem;
 }
 
-.row1 {
+.container1 {
     width: 67%;
     float: left;
 }
 
-.row2 {
+.container2 {
     width: 31.5%;
     float: right;
 }
@@ -173,22 +171,13 @@ a:hover {
         font-size: 16px;
     }
 
-    .row1 {
-        width: 100%;
-    }
-
-    .row2 {
+    .container1 {
         width: 100%;
         float: left;
     }
 
-    .row3 {
-        width: 70%;
-        float: left;
-    }
-
-    .row4 {
-        width: 30%;
+    .container2 {
+        width: 100%;
         float: right;
     }
 
