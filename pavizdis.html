@@ -9,22 +9,85 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+​    <script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
 
+
+
+<style>
+    img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .grit-item:nth-child(odd) > img {
+        height: 500px;
+    }
+
+    .grid-gutter-sizer {
+        width: 0;
+    }
+
+
+
+</style>
 </head>
 
     <body>
         <div class='container'>
-            <div class='row'>
-                <div class='col-md-6'>tekstas</div>
-                <div class='col-md-6'>tekstas</div>
-                <div class='col-md-6'>tekstas</div>
-                <div class='col-md-6'>tekstas</div>
-                <div class='col-md-6'>tekstas</div>
-                <div class='col-md-6'>tekstas</div>
+            <div class='row grid'>
+                <div class='col-md-6 grid-sizer'></div>
+                <div class='grid-gutter-sizer'></div>
+                
             </div>
 
 
             <script>
+
+                //const konstanta='3.141';
+
+                //let kintamasis;
+
+                //var kintamasis;
+
+
+
+
+
+                //var zmogus = {
+                    //'vardas': 'Vardenis',
+                    //'pavarde': 'Pavardenis',
+                    //'koda': 35856,
+                    //'apibudinimas': ['aukstas', 'turtingas', 'nemoka siuti']
+                //};
+
+                //var zmogus1 = {
+                    //'vardas': 'Vardenis1',
+                    //'pavarde': 'Pavardenis1',
+                    //'koda': 358555,
+                    //'apibudinimas': ['zemas', 'turtingas', 'moka siuti']
+                //};
+                
+                //console.log(zmogus.vardas);
+                //console.log(zmogus1.pavarde);
+
+
+                //var grupe;
+                //grupe = [zmogus, zmogus1];
+
+                //for(var i = 0; i < grupe.length; i++ ){
+                    //console.log(grupe[i].vardas)
+
+                   //}
+
+
+
+
+                //console.log(grupe);
+
+
+
 
         // var x = 1;
 
@@ -100,10 +163,40 @@
 
                 for(var i = 0; i < data.length; i++ ) {
                     console.log(data[i].urls.regular);
+
+                    var pElement = document.createElement('p');
+                    pElement.classList.add('title');
+                    pElement.innerText = data[i].alt_description;
+
                     var imageElement = document.createElement('img');
                     imageElement.src = data[i].urls.regular;
-                    document.querySelector('.container').append(imageElement);
-                }
+
+
+                    var divElement = document.createElement('div');
+                    divElement.classList.add('col-md-6');
+                    divElement.classList.add('grid-item');
+
+
+                    divElement.append(imageElement);
+                    divElement.append(pElement);
+
+                    document.querySelector('.grid').append(divElement);
+                   }
+
+                    var iso = new Isotope('.grid',{
+                        itemSelector: '.grid-item',
+                        stagger: 30,
+                        getSortData: {
+                            title: '.title'
+                        },
+                        masonry: {
+                            columnWidth: '.grid-sizer',
+                            gutter: '.grid-gutter-sizer'
+                        },
+
+                        sortBy: 'title',
+                        sortAscendind: true
+                    });
             }
         );
     </script>
