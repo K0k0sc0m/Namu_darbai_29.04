@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style_image.css">
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     ​<script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+    
         
     
     <title>Image Galery</title>
@@ -38,7 +39,8 @@
 
         
         <div class="col-6 col-md-12 sortme">
-            <p class="title">Owl<br><img src="https://image.shutterstock.com/image-illustration/watercolor-animals-alphabetlearn-letters-funny-600w-1586818321.jpg"></p>
+            <p class="title">Owl<br><img src="https://image.shutterstock.com/image-illustration/watercolor-animals-alphabetlearn-letters-funny-600w-1586818321.jpg">
+            </p>
             
         </div>
         
@@ -215,6 +217,19 @@
 
 </div>
 <script>
+            
+
+
+                         window.addEventListener("scroll", function (){
+                         var pozicija = window.scrollY + window.innerHeight;
+                         if (pozicija >= document.body.offsetHeight) {
+                            console.log('Puslapio pabaiga');
+                          }
+                         })
+
+                         
+
+
 
                         var iso = new Isotope('#container',{
                         itemSelector: '.sortme',
@@ -226,6 +241,8 @@
                         sortBy: 'title',
                         sortAscendind: true
                          });
+
+                         
                     
 
 

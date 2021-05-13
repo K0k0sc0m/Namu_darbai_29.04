@@ -55,6 +55,11 @@ img {
 
 }
 
+audio {
+    background-color: aquamarine;
+    padding: 0.8333rem;
+}
+
 .col-1 {
     width: 8.33%;
 }
