@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">  
     <link rel="stylesheet" href="style_image.css">
+    <script src="https://unpkg.com/infinite-scroll@4/dist/infinite-scroll.pkgd.js"></script>
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     ​<script src='https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js'></script>
+
+   
     
         
     
@@ -32,11 +35,11 @@
 
 
 
-<div id="container">
+<div class="container">
 
 
     
-
+<div class="grid_item">
         
         <div class="col-6 col-md-12 sortme">
             <p class="title">Owl<br><img src="https://image.shutterstock.com/image-illustration/watercolor-animals-alphabetlearn-letters-funny-600w-1586818321.jpg">
@@ -211,41 +214,29 @@
             
         </div>
 
-    
 
-
+    </div>
 
 </div>
 <script>
-            
 
 
-                         window.addEventListener("scroll", function (){
-                         var pozicija = window.scrollY + window.innerHeight;
-                         if (pozicija >= document.body.offsetHeight) {
-                            console.log('Puslapio pabaiga');
-                          }
-                         })
-
-                         
-
-
-
-                        var iso = new Isotope('#container',{
-                        itemSelector: '.sortme',
+                        var iso = new Isotope(".container",{
+                        itemSelector: ".sortme",
                         stagger: 30,
                         getSortData: {
-                            title: '.title'
+                            title: ".title"
                         },
                     
-                        sortBy: 'title',
-                        sortAscendind: true
-                         });
+                        sortBy: "title",
+                        sortAscendind: true,
+                        });
 
-                         
+
+                       
+          
+
                     
-
-
 </script>
 
 </body>
